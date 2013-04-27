@@ -5,7 +5,11 @@ var app = require('express')()
 
 var ws1;
 
-app.listen(80);
+// app.listen(process.env.VCAP_APP_PORT || 3000);
+
+app.get('/', function(req, res) {
+	res.sendfile(__dirname + '/index.html');
+});
 
 app.get('/teste', function(req, res) {
 	if (ws1 != null) {
