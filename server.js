@@ -5,7 +5,7 @@ var app = require('express')()
 
 var ws_browser;
 
-app.listen(80);
+app.listen(8338);
 
 app.get('/', function(req, res) {
 	res.sendfile(__dirname + '/index.html');
