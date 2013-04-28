@@ -3,7 +3,7 @@ var server_path = 'ws://23.22.100.228:8080';
 
 var ws = new WebSocket(server_path);
 ws.onmessage = function (event) {
-	notification = webkitNotifications.createNotification('', 'Alert!', event.data);
+	notification = webkitNotifications.createNotification('', 'Alert!', unescape(event.data));
 	notification.ondisplay = cancelNotification(notification);
 
 	notification.show();
