@@ -25,3 +25,5 @@ local.properties
 
 # Node
 node_modules
+
+*.pem

@@ -3,17 +3,19 @@ var app = require('express')()
 	, WebSocketServer = require('ws').Server
   	, wss = new WebSocketServer({port: 8080});
 
-var ws1;
+var ws_browser;
 
-// app.listen(process.env.VCAP_APP_PORT || 3000);
+app.listen(80);
 
 app.get('/', function(req, res) {
 	res.sendfile(__dirname + '/index.html');
 });
 
-app.get('/teste', function(req, res) {
-	if (ws1 != null) {
-		ws1.send('oláááááá');
+app.get('/send_notification', function(req, res) {
+	console.log(req);
+
+	if (ws_browser != null) {
+		ws_browser.send(req['query']['notification']);
 		res.send('ok');
 	} else {
 		res.send('fail :(');
@@ -22,9 +24,9 @@ app.get('/teste', function(req, res) {
 });
 
 wss.on('connection', function(ws) {
-	ws1 = ws;
+	ws_browser = ws;
     ws.on('message', function(message) {
         console.log('received: %s', message);
     });
-    ws.send('something');
+    ws.send('connected');
 });
