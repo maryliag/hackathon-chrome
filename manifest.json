@@ -1,13 +1,12 @@
 {
   "manifest_version": 2,
   "name": "Hello World",
-  "version": "1",
-  "permissions": [],
+  "version": "0.1",
+  "permissions": ["notifications"],
   "app": {
     "background": {
-      "scripts": ["main.js"]
+      "scripts": ["js/index.js"]
     }
   },
   "minimum_chrome_version": "23"
-
 }
