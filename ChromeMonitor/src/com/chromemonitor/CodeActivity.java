@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.zxing.BinaryBitmap;
@@ -32,7 +31,7 @@ public class CodeActivity extends Activity {
 	private Bitmap bmp;
 	private String text;
     private ImageView ivPicture;
-    private TextView textv;
+    //private TextView textv;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,7 +42,7 @@ public class CodeActivity extends Activity {
         userId = prefs.getString("userId", null);
         btn = (Button)findViewById(R.id.code_button);
         ivPicture = (ImageView) findViewById(R.id.image_selected);
-        textv= (TextView) findViewById(R.id.text_result);
+        //textv= (TextView) findViewById(R.id.text_result);
         
         System.out.println(" user " + userId);
         if (userId != null) {
@@ -77,7 +76,6 @@ public class CodeActivity extends Activity {
 	public void startActivity() {
 		prefs = this.getSharedPreferences("com.chromemonitor", Context.MODE_PRIVATE);
         userId = prefs.getString("userId", null);
-        System.out.println("useeer " + userId);
         if (userId != null) {
         	Intent i = new Intent(this, MainActivity.class);
     		startActivity(i);

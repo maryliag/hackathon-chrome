@@ -13,11 +13,6 @@ import com.loopj.android.http.RequestParams;
 
 public class SmsReceiver extends BroadcastReceiver {
 	
-	private Context ctx;
-	
-	public SmsReceiver (Context ctx) {
-		this.ctx = ctx;
-	}
 
 		@Override
 		public void onReceive(Context context, Intent intent) {
@@ -32,8 +27,8 @@ public class SmsReceiver extends BroadcastReceiver {
 			String msg = "Mensagem recebida de " + smsMessage[0].getDisplayOriginatingAddress() + ": " +  smsMessage[0].getMessageBody();
 			msg.replace(" ", "%20");
 			params.put("notification", msg);
-			params.put("id", ctx.getSharedPreferences("com.chromemonitor", Context.MODE_PRIVATE).getString("userId", null));
-			ApplicationHttpClient.post("send_notification", params, new AsyncHttpResponseHandler() {
+			params.put("id", context.getSharedPreferences("com.chromemonitor", Context.MODE_PRIVATE).getString("userId", null));
+			ApplicationHttpClient.get("send_notification", params, new AsyncHttpResponseHandler() {
 				
 				public void onSuccess(final String response) {
 				}

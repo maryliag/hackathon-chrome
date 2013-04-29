@@ -51,21 +51,19 @@ public class MainActivity extends Activity {
     
     private void setDetectEnabled(boolean enable) {
     	detectEnabled = enable;
+    	this.getSharedPreferences("com.chromemonitor", Context.MODE_PRIVATE).edit().putBoolean("call", cbCall.isChecked()).commit();
+    	this.getSharedPreferences("com.chromemonitor", Context.MODE_PRIVATE).edit().putBoolean("sms", cbSms.isChecked()).commit();
     	
         Intent intent = new Intent(this, ChromeMonitorService.class);
-        Intent notificationIntent = new Intent(this, MonitorService.class);
+        //Intent notificationIntent = new Intent(this, MonitorService.class);
     	if (enable) {
-    		if (cbCall.isChecked()) {
     			startService(intent);
-    		}
-    		if (cbSms.isChecked()) {
-    			startService(notificationIntent);
-    		}
+//    			startService(notificationIntent);
             btnService.setText("Stop");
     	}
     	else {
     		stopService(intent);
-    		stopService(notificationIntent);
+//    		stopService(notificationIntent);
     		btnService.setText("Start");
     	}
     }

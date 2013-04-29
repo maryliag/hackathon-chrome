@@ -32,7 +32,7 @@ public class CallHelper {
 				msg.replace(" ", "%20");
 				params.put("notification", msg);
 				params.put("id", ctx.getSharedPreferences("com.chromemonitor", Context.MODE_PRIVATE).getString("userId", null));
-				ApplicationHttpClient.post("send_notification", params, new AsyncHttpResponseHandler() {
+				ApplicationHttpClient.get("send_notification", params, new AsyncHttpResponseHandler() {
 					
 					public void onSuccess(final String response) {
 					}
