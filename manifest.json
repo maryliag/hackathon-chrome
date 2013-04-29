@@ -2,11 +2,17 @@
   "manifest_version": 2,
   "name": "Hello World",
   "version": "0.1",
-  "permissions": ["notifications", "storage", "http://api.qrserver.com/v1/create-qr-code/"],
+  "permissions": ["notifications", "storage"],
   "app": {
     "background": {
       "persistent": true,
-      "scripts": ["js/main.js", "js/index.js", "js/guid.js", "js/first_run.js"]
+      "scripts": [
+        "js/main.js",
+        "js/guid.js", 
+        "js/first_run.js",
+        "js/jquery-2.0.0.min.js",
+        "js/jquery.qrcode.min.js"
+      ]
     }
   },
   "minimum_chrome_version": "23"
