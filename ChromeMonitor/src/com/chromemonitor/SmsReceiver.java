@@ -1,8 +1,5 @@
 package com.chromemonitor;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;

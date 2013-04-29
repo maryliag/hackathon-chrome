@@ -9,31 +9,25 @@ public class MonitorService extends AccessibilityService {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		System.out.println("iniciouuu");
 	}
 	
 	@Override
 	public void onAccessibilityEvent(AccessibilityEvent event) {
 	    final int eventType = event.getEventType();
+	    System.out.println("eventooooo >> " + event.getEventType() + " > " + String.valueOf(event.getPackageName()));
 	    switch(eventType) {
-	        case AccessibilityEvent.TYPE_ANNOUNCEMENT:
-	        	System.out.println("Announcement");
-	            break;
 	        case AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED:
-	        	System.out.println("estado da notificacao mudou");
+	        	System.out.println("estado da notificacao mudou " + event.getContentDescription());
 	            break;
-	        case AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED:
-	        	System.out.println("window content changed");
-	        	break;
-	        case AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED:
-	        	System.out.println("window state changed");
-	        	break;
-	        default: 
-	        	System.out.println("accessibility eveeeent");
+	        default : 
+	        	System.out.println("algum evento " + event.getEventType());
 	    }
 	}
 	
 	@Override
 	protected void onServiceConnected() {
+		System.out.println("conectado");
 	    AccessibilityServiceInfo info = new AccessibilityServiceInfo();
 	    info.eventTypes = AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED;
 	    info.feedbackType = AccessibilityServiceInfo.FEEDBACK_ALL_MASK;

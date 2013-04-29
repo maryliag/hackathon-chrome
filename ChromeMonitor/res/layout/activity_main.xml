@@ -1,14 +1,66 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent" 
+    android:background="@android:color/black">
+    
+    <ImageView 
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:contentDescription="imagem"
+        android:src="@drawable/bkg_header"/>
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:typeface="serif"
+        android:text="@string/monitor"/>
+
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="70dp"
+        android:textColor="@android:color/white"
+        android:textSize="17dp"
+        android:text="@string/select"/>
+    
+    <CheckBox
+        android:id="@+id/check_call"
+        android:text="@string/call_monitor"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="100dp"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:textSize="17dp"
+        android:checked="true"/>
+    
+    <CheckBox
+        android:id="@+id/check_sms"
+        android:text="@string/sms_monitor"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="160dp" 
+        android:textSize="17dp"
+        android:checked="true"/>
+
     
     <Button 
         android:id="@+id/service_button"
         android:text="@string/start"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:layout_width="100dp"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="300dp"
+        android:typeface="serif"
+        android:background="@drawable/rounded_shape"
+        android:textColor="@android:color/white"/>
 
-</RelativeLayout>
+</FrameLayout>
