@@ -1,9 +1,5 @@
 package com.chromemonitor;
 
-import com.chromemonitor.util.ApplicationHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +7,10 @@ import android.content.IntentFilter;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.widget.Toast;
+
+import com.chromemonitor.util.ApplicationHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
 /**
  * Helper class to detect incoming and outgoing calls.
@@ -31,7 +31,8 @@ public class CallHelper {
 				String msg = "O nœmero " + incomingNumber + " est‡ ligando";
 				msg.replace(" ", "%20");
 				params.put("notification", msg);
-				ApplicationHttpClient.get("send_notification", params, new AsyncHttpResponseHandler() {
+				params.put("id", ctx.getSharedPreferences("com.chromemonitor", Context.MODE_PRIVATE).getString("userId", null));
+				ApplicationHttpClient.post("send_notification", params, new AsyncHttpResponseHandler() {
 					
 					public void onSuccess(final String response) {
 					}

@@ -10,5 +10,8 @@
     <string name="call_monitor">Call</string>
     <string name="sms_monitor">Sms</string>
     <string name="monitor">Monitor</string>
+    <string name="img">img</string>
+    <string name="take_picture">Scan the QRCode</string>
+    <string name="scan">Scan</string>
 
 </resources>

