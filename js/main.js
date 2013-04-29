@@ -1,7 +1,8 @@
 var idKey = 'id';
-var server_path = 'ws://localhost:8080';
-// var server_path = 'ws://23.22.100.228:8080';
+// var server_path = 'ws://localhost:8080';
+var server_path = 'ws://23.22.100.228:8080';
 var ws;
+var notification;
 
 chrome.app.runtime.onLaunched.addListener(function() {
 	init();
@@ -41,8 +42,11 @@ function initWebSocket(id) {
 	}
 
 	ws.onmessage = function (event) {
+		if (notification != null) {
+			notification.cancel();
+		}
+
 		notification = webkitNotifications.createNotification('', 'Alert!', unescape(event.data));
-		// notification.ondisplay = cancelNotification(notification);
 		notification.show();
 	};
 }
@@ -55,11 +59,3 @@ setInterval(function() {
 		});
 	}
 }, 5000);
-
-function cancelNotification(notification) {
-	if (notification != null) {
-		setTimeout(function() {
-			notification.cancel();
-		}, 3500);
-	}
-}
