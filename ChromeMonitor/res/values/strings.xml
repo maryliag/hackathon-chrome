@@ -1,9 +1,9 @@
 <resources>
 
-    <string name="app_name">Chrome Monitor</string>
+    <string name="app_name">James</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">Chrome Monitor</string>
+    <string name="title_activity_main">James</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
     <string name="select">Select the services you want to monitor</string>

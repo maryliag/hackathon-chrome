@@ -2,10 +2,10 @@
 <accessibility-service
      xmlns:android="http://schemas.android.com/apk/res/android"
      android:accessibilityEventTypes="typeAllMask"
-     android:packageNames="com.chromemonitor"
+     android:packageNames="com.chrome.james"
      android:accessibilityFeedbackType="feedbackSpoken"
      android:notificationTimeout="100"
-     android:settingsActivity="com.chromemonitor.MainActivity"
+     android:settingsActivity="com.chrome.james.MainActivity"
      android:accessibilityFlags="flagDefault"
      android:canRetrieveWindowContent="true"
 />
