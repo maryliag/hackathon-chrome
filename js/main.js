@@ -15,6 +15,8 @@ chrome.runtime.onInstalled.addListener(function() {
 		'width': 400,
 		'height': 500
 	});
+
+	init();
 });
 
 function init() { 
@@ -40,7 +42,7 @@ function initWebSocket(id) {
 
 	ws.onmessage = function (event) {
 		notification = webkitNotifications.createNotification('', 'Alert!', unescape(event.data));
-		notification.ondisplay = cancelNotification(notification);
+		// notification.ondisplay = cancelNotification(notification);
 		notification.show();
 	};
 }
