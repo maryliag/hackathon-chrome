@@ -1,6 +1,5 @@
 var server_path = 'ws://localhost:8080';
 // var server_path = 'ws://23.22.100.228:8080';
-var idKey = 'id';
 var ws;
 
 function init() { 

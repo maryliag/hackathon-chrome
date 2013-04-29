@@ -6,7 +6,7 @@
   "app": {
     "background": {
       "persistent": true,
-      "scripts": ["js/main.js", "js/index.js", "js/guid.js"]
+      "scripts": ["js/main.js", "js/index.js", "js/guid.js", "js/first_run.js"]
     }
   },
   "minimum_chrome_version": "23"
