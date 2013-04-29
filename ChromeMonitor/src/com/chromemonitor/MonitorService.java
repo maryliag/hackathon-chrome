@@ -35,8 +35,10 @@ public class MonitorService extends AccessibilityService {
 	    setServiceInfo(info);
 	}
 
-    @Override
-    public void onInterrupt() {
-    	System.out.println("parooooo");
-    }
+	@Override
+	public void onInterrupt() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
