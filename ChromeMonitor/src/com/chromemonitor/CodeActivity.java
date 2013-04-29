@@ -39,7 +39,7 @@ public class CodeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.get_code);
         prefs = this.getSharedPreferences("com.chromemonitor", Context.MODE_PRIVATE);
-        prefs.edit().putString("userId", null).commit();
+        //prefs.edit().putString("userId", null).commit();
         userId = prefs.getString("userId", null);
         btn = (Button)findViewById(R.id.code_button);
         ivPicture = (ImageView) findViewById(R.id.image_selected);
@@ -121,10 +121,12 @@ public class CodeActivity extends Activity {
         } catch (FormatException e) {
             e.printStackTrace();
         }
-        if(text!=null)
-        Toast.makeText(getBaseContext(), text, Toast.LENGTH_LONG).show();
+        if(text!=null) {
+        	//Toast.makeText(getBaseContext(), text, Toast.LENGTH_LONG).show();
+        }
         else{
-            Toast.makeText(getBaseContext(), "QQ", Toast.LENGTH_LONG).show();
+        	ivPicture.setVisibility(View.INVISIBLE);
+            Toast.makeText(getBaseContext(), "Could not read! Try again!", Toast.LENGTH_LONG).show();
         }
     }
 

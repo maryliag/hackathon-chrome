@@ -62,5 +62,16 @@
         android:typeface="serif"
         android:background="@drawable/rounded_shape"
         android:textColor="@android:color/white"/>
+    
+    <Button 
+        android:id="@+id/new_code_button"
+        android:text="@string/new_scan"
+        android:layout_width="190dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="370dp"
+        android:typeface="serif"
+        android:background="@drawable/rounded_shape"
+        android:textColor="@android:color/white"/>
 
 </FrameLayout>

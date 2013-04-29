@@ -13,5 +13,6 @@
     <string name="img">img</string>
     <string name="take_picture">Scan the QRCode</string>
     <string name="scan">Scan</string>
+    <string name="new_scan">Scan New QRCode</string>
 
 </resources>

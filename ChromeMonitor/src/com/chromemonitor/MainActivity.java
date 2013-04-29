@@ -1,6 +1,7 @@
 package com.chromemonitor;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,6 +15,7 @@ public class MainActivity extends Activity {
 	boolean isRunning = false;
 	private boolean detectEnabled;
 	Button btnService;
+	Button btnNewCode;
 	CheckBox cbCall;
 	CheckBox cbSms;
 
@@ -22,6 +24,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btnService = (Button)findViewById(R.id.service_button);
+        btnNewCode = (Button)findViewById(R.id.new_code_button);
         cbCall = (CheckBox)findViewById(R.id.check_call);
         cbSms = (CheckBox)findViewById(R.id.check_sms);
         
@@ -30,6 +33,14 @@ public class MainActivity extends Activity {
             	setDetectEnabled(!detectEnabled);
             }
         });
+        btnNewCode.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) {
+				MainActivity.this.getSharedPreferences("com.chromemonitor", Context.MODE_PRIVATE).edit().putString("userId", null).commit();
+				Intent i = new Intent(MainActivity.this, CodeActivity.class);
+	    		startActivity(i);
+			}
+		});
     }
 
     @Override
