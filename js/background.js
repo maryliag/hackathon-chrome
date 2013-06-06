@@ -4,17 +4,28 @@ var server_path = 'ws://23.22.100.228:8080';
 var ws;
 var notification;
 
-chrome.app.runtime.onLaunched.addListener(function() {
+var active = true;
+
+chrome.runtime.onStartup.addListener(function() {
 	init();
 });
 
 chrome.runtime.onInstalled.addListener(function() { 
 	var id = guid();
+	var width = 400;
+	var height = 500;
+	var left = (screen.width/2)-(width/2);
+	var top = (screen.height/2)-(height/2);
+
 	chrome.storage.local.set({'id': id});
 
-	chrome.app.window.create('html/first_run.html', {
-		'width': 400,
-		'height': 500
+	chrome.windows.create({
+		url:'html/first_run.html', 
+		type:'popup',
+		width: width,
+		height: height,
+		left: left,
+		top: top
 	});
 
 	init();
@@ -31,6 +42,15 @@ function init() {
 
 		initWebSocket(id);
 	});
+
+	chrome.browserAction.onClicked.addListener(function(tab) {
+		var icon_path = active ? 'img/icon_disabled.png' : 'img/icon_enabled.png';
+		active = !active;
+
+		chrome.browserAction.setIcon({
+			path: icon_path
+		});
+	});
 }
 
 function initWebSocket(id) {
@@ -42,12 +62,14 @@ function initWebSocket(id) {
 	}
 
 	ws.onmessage = function (event) {
-		if (notification != null) {
-			notification.cancel();
-		}
+		if (active) {
+			if (notification != null) {
+				notification.cancel();
+			}
 
-		notification = webkitNotifications.createNotification('', 'Alert!', unescape(event.data));
-		notification.show();
+			notification = webkitNotifications.createNotification('', 'Alert!', unescape(event.data));
+			notification.show();
+		}
 	};
 }
 

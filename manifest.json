@@ -3,17 +3,17 @@
   "name": "James",
   "version": "0.1",
   "permissions": ["notifications", "storage"],
-  "app": {
-    "background": {
-      "persistent": true,
-      "scripts": [
-        "js/main.js",
-        "js/guid.js", 
-        "js/first_run.js",
-        "js/jquery-2.0.0.min.js",
-        "js/jquery.qrcode.min.js"
-      ]
+  "browser_action": {
+    "default_icon": {
+      "19": "img/icon_enabled.png"
     }
+  },
+  "background": {
+    "persistent": true,
+    "scripts": [
+      "js/lib/guid.js",
+      "js/background.js"
+    ]
   },
   "minimum_chrome_version": "23"
 }
