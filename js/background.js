@@ -10,7 +10,7 @@ chrome.runtime.onStartup.addListener(function() {
 	init();
 });
 
-chrome.runtime.onInstalled.addListener(function() { 
+chrome.runtime.onInstalled.addListener(function() {
 	var id = guid();
 	var width = 400;
 	var height = 500;
@@ -20,7 +20,7 @@ chrome.runtime.onInstalled.addListener(function() {
 	chrome.storage.local.set({'id': id});
 
 	chrome.windows.create({
-		url:'html/first_run.html', 
+		url:'html/first_run.html',
 		type:'popup',
 		width: width,
 		height: height,
@@ -31,7 +31,7 @@ chrome.runtime.onInstalled.addListener(function() {
 	init();
 });
 
-function init() { 
+function init() {
 	chrome.storage.local.get(idKey, function(items) {
 		var id = items[idKey];
 
@@ -43,13 +43,15 @@ function init() {
 		initWebSocket(id);
 	});
 
-	chrome.browserAction.onClicked.addListener(function(tab) {
-		var icon_path = active ? 'img/icon_disabled.png' : 'img/icon_enabled.png';
-		active = !active;
+	chrome.storage.local.get('active', function(items) {
+		active = items['active'];
 
-		chrome.browserAction.setIcon({
-			path: icon_path
-		});
+		if (active == null) {
+			active = true;
+			chrome.storage.local.set({'active': active});
+		}
+
+		toggleBrowserActionStatus(active);
 	});
 }
 
@@ -59,7 +61,7 @@ function initWebSocket(id) {
 	ws.onopen = function(event) {
 		console.log(id);
 		ws.send(id);
-	}
+	};
 
 	ws.onmessage = function (event) {
 		if (active) {

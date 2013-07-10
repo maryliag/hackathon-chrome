@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>James</title>
+		<style type="text/css">
+			body {
+				width: 200px;
+				font-family: Verdana;
+				font-size: 8pt;
+				margin: 10px;
+			}
+
+			h1 {
+				margin-bottom: 5px;
+				font-size: 12pt;
+			}
+
+			a {
+				text-decoration: none;
+				color: #3F74CE;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+			#qr_code {
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript" src="../js/lib/jquery-2.0.0.min.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery.qrcode.min.js"></script>
+		<script type="text/javascript" src="../js/james.js"></script>
+		<script type="text/javascript" src="../js/popup.js"></script>
+	</head>
+	<body>
+		<h1 id="lbl_settings">Settings</h1>
+		<span id="lbl_show_notification"></span>:
+		<input id="ckbx_show_notification" type="checkbox" />
+
+		<h1 id="lbl_current_sync_id">Current Sync ID</h1>
+		<div id="qr_code"></div>
+
+		<h1 id="lbl_android_app">Android App</h1>
+		<a href="https://play.google.com/store/apps/details?id=br.com.gushiwho.james" target="_blank">
+		  <img alt="Android app on Google Play"
+		       src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+		</a>
+
+		<br />
+		<br />
+		<button id="btn_save" type="button"></button>
+		<span id="lbl_or"></span>
+		<a id="btn_cancel" href="#"></a>
+
+	</body>
+</html>

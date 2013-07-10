@@ -1,13 +1,14 @@
 {
   "manifest_version": 2,
   "name": "James",
-  "options_page": "html/options.html",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "permissions": ["notifications", "storage"],
   "browser_action": {
     "default_icon": {
       "19": "img/icon_enabled.png"
-    }
+    },
+    "default_title": "James",
+    "default_popup": "html/popup.html"
   },
   "icons": {
     "16": "img/icon_16.png",
@@ -18,8 +19,10 @@
     "persistent": true,
     "scripts": [
       "js/lib/guid.js",
+      "js/james.js",
       "js/background.js"
     ]
   },
-  "minimum_chrome_version": "23"
+  "minimum_chrome_version": "23",
+  "default_locale": "en"
 }

@@ -1,0 +1,23 @@
+{
+	"lblActivateNotification": {
+		"message": "Show notifications"
+	},
+	"lblSettings": {
+		"message": "Settings"
+	},
+	"lblCurrentSyncId": {
+		"message": "Current Sync ID"
+	},
+	"btnSave": {
+		"message": "Save"
+	},
+	"lblOr": {
+		"message": "or"
+	},
+	"btnCancel": {
+		"message": "Cancel"
+	},
+	"txtDisabled": {
+		"message": "disabled"
+	}
+}
