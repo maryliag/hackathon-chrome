@@ -1,4 +1,7 @@
 {
+	"extDescription": {
+		"message": "James envia avisos importantes do seu celular diretamente para a janela do seu browser."
+	},
 	"lblActivateNotification": {
 		"message": "Mostrar notificações"
 	},

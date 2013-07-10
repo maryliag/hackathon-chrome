@@ -1,4 +1,7 @@
 {
+	"extDescription": {
+		"message": "James allows you to receive import alerts from your smartphone directly in your browser."
+	},
 	"lblActivateNotification": {
 		"message": "Show notifications"
 	},
