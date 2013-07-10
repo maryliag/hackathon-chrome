@@ -19,5 +19,8 @@
 	},
 	"txtDisabled": {
 		"message": "desativado"
+	},
+	"urlGooglePlayBadge": {
+		"message": "https://developer.android.com/images/brand/pt-br_generic_rgb_wo_45.png"
 	}
 }

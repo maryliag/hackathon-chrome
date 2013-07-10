@@ -3,6 +3,7 @@ $(function() {
 	$("#lbl_settings").html(chrome.i18n.getMessage("lblSettings"));
 	$("#lbl_current_sync_id").html(chrome.i18n.getMessage("lblCurrentSyncId"));
 	$("#lbl_or").html(chrome.i18n.getMessage("lblOr"));
+	$("#google_play_badge").attr('src', chrome.i18n.getMessage("urlGooglePlayBadge"))
 
 	chrome.storage.local.get(['active', 'id'], function(items) {
 		var active = items['active'];

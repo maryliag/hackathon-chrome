@@ -19,5 +19,8 @@
 	},
 	"txtDisabled": {
 		"message": "disabled"
+	},
+	"urlGooglePlayBadge": {
+		"message": "https://developer.android.com/images/brand/en_app_rgb_wo_45.png"
 	}
 }
