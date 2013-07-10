@@ -1,7 +1,7 @@
-function toggleBrowserActionStatus(active) {
+function toggleBrowserActionStatus(active, callback) {
 	var icon_path = active ? '/img/icon_enabled.png' : '/img/icon_disabled.png';
 	chrome.browserAction.setIcon({ path: icon_path }, function() {
-		window.close();
+		typeof callback == "function" && callback();
 	});
 
 	var title = 'James' + (active ? '' : ' ('+chrome.i18n.getMessage("txtDisabled")+')');
