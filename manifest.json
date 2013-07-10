@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "James",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "permissions": ["notifications", "storage"],
   "browser_action": {
     "default_icon": {
