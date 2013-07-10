@@ -10,12 +10,19 @@
 			font-family: helvetica;
 			font-size: 12pt;
 		}
+		p { margin: 0; }
+		canvas { margin: 14px; }
 	</style>
 </head>
 <body>
-	Welcome! <br />
-	Please scan this QRCode with your Android app.
-	<p id="qr_code">
-	</p>
+	<p id="txt_welcome"></p>
+	<p id="txt_scan_code"></p>
+
+	<div id="qr_code"></div>
+
+	<p id="txt_download_app"></p>
+	<a href="https://play.google.com/store/apps/details?id=br.com.gushiwho.james" target="_blank">
+	  <img 	id="google_play_badge" alt="Android app on Google Play" />
+	</a>
 </body>
 </html>

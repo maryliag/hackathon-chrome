@@ -6,7 +6,10 @@
 		"message": "Configurações"
 	},
 	"lblCurrentSyncId": {
-		"message": "ID de sincronização atual"
+		"message": "ID atual"
+	},
+	"lblAndroidApp": {
+		"message": "App para Android"
 	},
 	"btnSave": {
 		"message": "Salvar"
@@ -19,6 +22,15 @@
 	},
 	"txtDisabled": {
 		"message": "desativado"
+	},
+	"txtWelcome": {
+		"message": "Bem-vindo!"
+	},
+	"txtScanCode": {
+		"message": "Leia o QRCode abaixo com o seu celular."
+	},
+	"txtDownloadApp": {
+		"message": "Se você ainda não tem o nosso app, baixe-o agora."
 	},
 	"urlGooglePlayBadge": {
 		"message": "https://developer.android.com/images/brand/pt-br_generic_rgb_wo_45.png"

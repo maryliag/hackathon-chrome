@@ -8,6 +8,9 @@
 	"lblCurrentSyncId": {
 		"message": "Current Sync ID"
 	},
+	"lblAndroidApp": {
+		"message": "Android app"
+	},
 	"btnSave": {
 		"message": "Save"
 	},
@@ -19,6 +22,15 @@
 	},
 	"txtDisabled": {
 		"message": "disabled"
+	},
+	"txtWelcome": {
+		"message": "Welcome!"
+	},
+	"txtScanCode": {
+		"message": "Please scan this QRCode with your Android app."
+	},
+	"txtDownloadApp": {
+		"message": "If you haven't got it yet, download it now."
 	},
 	"urlGooglePlayBadge": {
 		"message": "https://developer.android.com/images/brand/en_app_rgb_wo_45.png"

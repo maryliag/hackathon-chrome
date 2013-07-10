@@ -2,6 +2,7 @@ $(function() {
 	$("#lbl_show_notification").html(chrome.i18n.getMessage("lblActivateNotification"));
 	$("#lbl_settings").html(chrome.i18n.getMessage("lblSettings"));
 	$("#lbl_current_sync_id").html(chrome.i18n.getMessage("lblCurrentSyncId"));
+	$("#lbl_android_app").html(chrome.i18n.getMessage("lblAndroidApp"));
 	$("#lbl_or").html(chrome.i18n.getMessage("lblOr"));
 	$("#google_play_badge").attr('src', chrome.i18n.getMessage("urlGooglePlayBadge"));
 

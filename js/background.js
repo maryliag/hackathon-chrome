@@ -13,7 +13,7 @@ chrome.runtime.onStartup.addListener(function() {
 chrome.runtime.onInstalled.addListener(function() {
 	var id = guid();
 	var width = 400;
-	var height = 500;
+	var height = 400;
 	var left = (screen.width/2)-(width/2);
 	var top = (screen.height/2)-(height/2);
 
