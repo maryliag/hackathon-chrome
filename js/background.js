@@ -10,25 +10,27 @@ chrome.runtime.onStartup.addListener(function() {
 	init();
 });
 
-chrome.runtime.onInstalled.addListener(function() {
-	var id = guid();
-	var width = 400;
-	var height = 400;
-	var left = (screen.width/2)-(width/2);
-	var top = (screen.height/2)-(height/2);
+chrome.runtime.onInstalled.addListener(function(details) {
+	if (details.reason == 'install') {
+		var id = guid();
+		var width = 400;
+		var height = 400;
+		var left = (screen.width/2)-(width/2);
+		var top = (screen.height/2)-(height/2);
 
-	chrome.storage.local.set({'id': id});
+		chrome.storage.local.set({'id': id});
 
-	chrome.windows.create({
-		url:'html/first_run.html',
-		type:'popup',
-		width: width,
-		height: height,
-		left: left,
-		top: top
-	});
+		chrome.windows.create({
+			url:'html/first_run.html',
+			type:'popup',
+			width: width,
+			height: height,
+			left: left,
+			top: top
+		});
 
-	init();
+		init();
+	}
 });
 
 function init() {
