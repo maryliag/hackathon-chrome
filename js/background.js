@@ -78,10 +78,13 @@ function initWebSocket(id) {
 }
 
 setInterval(function() {
-	if (ws != null) {
-		chrome.storage.local.get(idKey, function(items) {
-			var id = items[idKey];
+	chrome.storage.local.get(idKey, function(items) {
+		var id = items[idKey];
+
+		if (ws != null && ws.readyState == WebSocket.OPEN) {
 			ws.send(id);
-		});
-	}
-}, 5000);
+		} else {
+			initWebSocket(id);
+		}
+	});
+}, 60000);
