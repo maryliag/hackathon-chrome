@@ -1,12 +1,12 @@
-package com.chrome.james;
+package br.com.gushiwho.james;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
+import br.com.gushiwho.james.util.ApplicationHttpClient;
 
-import com.chrome.james.util.ApplicationHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 

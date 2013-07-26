@@ -1,4 +1,4 @@
-package com.chrome.james;
+package br.com.gushiwho.james;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -7,8 +7,8 @@ import android.content.IntentFilter;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.widget.Toast;
+import br.com.gushiwho.james.util.ApplicationHttpClient;
 
-import com.chrome.james.util.ApplicationHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 

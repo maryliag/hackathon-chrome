@@ -1,4 +1,4 @@
-package com.chrome.james;
+package br.com.gushiwho.james;
 
 import android.app.Service;
 import android.content.Context;

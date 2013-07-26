@@ -1,4 +1,4 @@
-package com.chrome.james.util;
+package br.com.gushiwho.james.util;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;

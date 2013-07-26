@@ -1,4 +1,4 @@
-package com.chrome.james;
+package br.com.gushiwho.james;
 
 import android.accessibilityservice.AccessibilityService;
 import android.accessibilityservice.AccessibilityServiceInfo;
